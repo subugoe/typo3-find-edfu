@@ -1,0 +1,66 @@
+{namespace s=Tx_Find_ViewHelpers}
+{namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Projects/edfu/Resources/fotorama/product/fotorama.uncompressed.js"/>
+<t3jquery:addJQueryAndScript jsfile="EXT:find/Resources/Projects/edfu/Resources/ddpowerzoomer.js"/>
+<s:linkCSS file="EXT:find/Resources/Projects/edfu/Resources/fotorama/product/fotorama.css"/>
+<h1>
+	<div class="technical">
+		<f:render partial="Edfu/Stellen" arguments="{_all}"/>
+		<f:render partial="Display/Field/Inline" arguments="{results:results, document:document, field:'texttyp', linkFieldContent:1}"/>
+	</div>
+</h1>
+<section class="general">
+	<f:render partial="Display/Field/Inline" arguments="{results:results, document:document, field:'transliteration', separator:', '}"/>
+	<f:render partial="Edfu/Uebersetzung" arguments="{results:results, document:document}"/>
+</section>
+<section class="photos">
+	<h1><f:translate key="LLL:{settings.languageRootPath}locallang-edfu.xml:Photos"/></h1>
+	<s:transpose name="collections" arrays="{
+		photos:document.photo_collection_photos,
+		note:document.photo_collection_string,
+		id:document.photo_collection_id
+	}">
+		<div class="imageControls">
+			<div class="control-container">
+				<span class="slider-label">{f:translate(key:'LLL:{settings.languageRootPath}locallang-edfu.xml:Kontrast')}</span>
+				<div id="slider-contrast" class="slider"></div>
+			</div>
+			<div class="control-container">
+				<span class="slider-label">{f:translate(key:'LLL:{settings.languageRootPath}locallang-edfu.xml:Helligkeit')}</span>
+				<div id="slider-brightness" class="slider"></div>
+			</div>
+		</div>
+
+		<ul class="photos fotorama" data-auto="false" data-width="100%" data-ratio="1.5" data-thumb-width="60" data-thumb-height="60" data-hash="true" data-max-height="100%" data-nav="thumbs" data-keyboard="true">
+			<f:for each="{collections}" as="collection">
+				<f:for each="{s:split(string:collection.photos, separator:',')}" as="photo">
+					<f:alias map="{path:'fileadmin/edfu-data/Photos/{photo}.{f:if(condition:\"{s:regexp(string:photo, match:\'/^SW/\')}\", then:\"jpg\", else:\"JPG\")}', photo_name:'{s:regexp(string:photo, match:\'|.*/(.*)|\', replace:\'\\1\')}'}">
+						<li>
+							<f:if condition="{s:pathExists(path:path)}">
+								<f:then>
+									<a href="{f:uri.image(src:path, maxHeight:2000px, maxWidth:2000px)}" data-caption="{photo_name}" id="c{uid}-collection-{collection.id}-photo-{photo_name}" title="asd">
+										<f:image src="{path}" alt="{f:translate(key:'LLL:{settings.languageRootPath}locallang-edfu.xml:Photo »%s« aus dem Edfu-Projekt.', arguments:{0:photo_name})}" width="60m" height="60m"additionalAttributes="{data-caption:path}"/>
+									</a>
+								</f:then>
+								<f:else>
+									<div class="imageName" data-caption="{photo_name}">
+										<f:translate key="LLL:{settings.languageRootPath}locallang-edfu.xml:Photo »%s« ist nicht online verfügbar." arguments="{0:photo_name}"/>
+									</div>
+								</f:else>
+							</f:if>
+						</li>
+					</f:alias>
+				</f:for>
+			</f:for>
+		</ul>
+	</s:transpose>
+</section>
+<f:if condition="{document.fields.literatur}">
+	<section class="literatur">
+		<h1><f:translate key="LLL:{settings.languageRootPath}locallang-edfu.xml:Literatur"/></h1>
+		<f:render partial="Display/Field/List" arguments="{results:results, document:document, field:'literatur', separator:', '}"/>
+	</section>
+</f:if>
+<f:if condition="{document.fields.szene_uid}">
+	<f:render partial="Edfu/Szenen" arguments="{_all}"/>
+</f:if>

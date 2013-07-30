@@ -1,0 +1,315 @@
+@font-face {
+  font-family: 'TransliterationFont';
+  src: url('Fonts/TransliterationTimesItalic.woff');
+  src: url('Fonts/TransliterationTimesItalic.eot') format('embedded-opentype'),
+       url('Fonts/TransliterationTimesItalic.woff') format('woff'),
+       url('Fonts/TransliterationTimesItalic.ttf') format('truetype'),
+	   /* TODO: make SVG font work: for some reason Times appears in the browser */
+       url('Fonts/TransliterationTimesItalic.svg#tti') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$larger: 133%;
+$dash: '\2014'; /* — */
+$dashspace: 0.3em;
+$more: '\2026'; /* … */
+
+.dashbefore {
+	&:before {
+		content: $dash;
+		padding-right: $dashspace;
+	}
+}
+
+.brackets {
+	&:before {
+		content: '(';
+	}
+
+	&:after {
+		content: ')';
+	}
+}
+
+.tx_find {
+
+	dl {
+		dt {
+			float: left;
+			clear: left;
+			width: 160px;
+			margin: 0;
+			text-align: right;
+		}
+
+		dd {
+			margin: 0 0 1em 0;
+			padding-left: 170px;
+			min-height: 1em;
+
+			ul {
+				padding: 0;
+
+				li {
+					list-style-type: none;
+					padding: 0 0 0 2em;
+					text-indent: -2em;
+				}
+			}
+		}
+	}
+
+	.field-transliteration, .transliteration, .field-weiteres {
+		font-family: TransliterationFont;
+	}
+
+	.result {
+		h1 {
+			.technical {
+				position: relative;
+				float: right;
+				margin-left: 1em;
+				font-size: 75%;
+
+				.bandseitezeile {
+					color: #333;
+				}
+
+				.bandseitezeile.multiple:after {
+					position: absolute;
+					top: 0;
+					right: -1em;
+					content: $more;
+				}
+
+				.field-texttyp {
+					color: #999;
+					font-style: italic;
+				}
+
+				.field-texttyp:after {
+					padding-left: $dashspace;
+					content: $dash;
+				}
+			}
+
+			.field-beziehung {
+				font-size: 80%;
+				color: #666;
+			}
+		}
+
+		.hieroglyph {
+			height: 32px;
+			float: right;
+		}
+	}
+	
+	section {
+		margin-bottom: 2em;
+	}
+		
+	.detail {
+		margin-top: 2em;
+
+		.field-transliteration {
+			font-size: $larger;
+		}
+
+		.field-beziehung {
+			@extend .dashbefore;
+		}
+
+		&.formular {
+			h1 {
+				ul {
+					display: inline;
+					margin: 0;
+					padding: 0;
+					list-style-type: none;
+
+					li {
+						display: inline;
+						font-size: $larger;
+					}
+				}
+
+			}
+
+			.field-texttyp {
+				@extend .dashbefore;
+				font-style: italic;
+			}
+
+			.field-transliteration {
+				display: block;
+				margin-top: 1em;
+			}
+
+			.field-uebersetzung {
+				display: block;
+				margin-top: 1em;
+			}
+		}
+
+		&.wort {
+			.hieroglyph {
+				float: right;
+			}
+
+			.zweifel {
+				@extend .brackets;
+			}
+		}
+
+	}
+
+	ul.photo-collections {
+		padding: 0;
+		
+		li {
+			list-style-type: none;
+		}
+
+		ul.photos {
+			padding: 0;
+			
+			li {
+				display: inline;
+				padding: 0;
+			}
+		}
+	}
+	
+	.klammerung:before {
+		font-family: Transliteration;
+		content: '\00f6';
+	}
+	
+	.klammerung:after {
+		font-family: Transliteration;
+		content: '\00c4';
+	}
+
+	.imageControls {
+		margin: 0 auto 1em auto;
+		text-align: center;
+
+		.control-container {
+			display: inline-block;
+			margin: 0 0.5em;
+
+			.slider {
+				display: inline-block;
+				top: 3px;
+				width: 200px;
+			}
+		}
+	}
+
+	.fotorama {
+		padding: 0;
+
+		.fotorama__caption {
+			opacity: 1;
+			right: 0;
+			left: 0;
+			text-align: center;
+			transition-duration: 0.3s;
+		}
+
+		.fotorama__nav {
+			.fotorama__caption {
+				padding: 0;
+				font-size: 12px;
+			}
+		}
+
+		.fotorama__html {
+			background: #eee;
+		}
+		
+		.imageName {
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: 2em;
+			text-align: center;
+		}
+	}
+
+	article.fields {
+		padding-top: 1em;
+
+		dl {
+			margin-top: 1em;
+
+			dt {
+				width: 200px;
+			}
+
+			dd {
+				padding-left: 210px;
+
+				ul {
+					padding-left: 2em;
+
+					li {
+						list-style-type: square;
+					}
+				}
+			}
+		}
+	}
+}
+
+.powerzoomer {
+	display: none;
+	position: absolute;
+	z-index: 1000;
+	overflow: hidden;
+	border: 2px solid #fff;
+	box-shadow: #000 1px 1px 4px;
+
+	.inner {
+		position:relative;
+		left:0;
+		top:0;
+	}
+}
+
+
+.imageContainer {
+	display: inline-block;
+	position: relative;
+
+	.szene {
+		display: block;
+		position: absolute;
+		font-size: 17px;
+		color: #f00;
+
+		&.icon-pointer-0 {
+			margin-top: -0.1em;
+			margin-left: -0.75em;
+		}
+
+		&.icon-pointer-90 {
+			margin-left: -1em;
+		}
+
+		&.icon-pointer-180 {
+			margin-top: -0.8em;
+			margin-left: -0.75em;
+		}
+
+		&.icon-pointer-270 {
+			margin-left: -.3em;
+		}
+
+	}
+
+
+}
+

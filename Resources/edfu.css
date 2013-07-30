@@ -1,0 +1,224 @@
+@font-face {
+  font-family: 'TransliterationFont';
+  src: url("Fonts/TransliterationTimesItalic.woff");
+  src: url("Fonts/TransliterationTimesItalic.eot") format("embedded-opentype"), url("Fonts/TransliterationTimesItalic.woff") format("woff"), url("Fonts/TransliterationTimesItalic.ttf") format("truetype"), url("Fonts/TransliterationTimesItalic.svg#tti") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* — */
+/* … */
+.dashbefore:before, .tx_find .detail .field-beziehung:before, .tx_find .detail.formular .field-texttyp:before {
+  content: "\2014";
+  padding-right: 0.3em;
+}
+
+.brackets:before, .tx_find .detail.wort .zweifel:before {
+  content: '(';
+}
+.brackets:after, .tx_find .detail.wort .zweifel:after {
+  content: ')';
+}
+
+.tx_find dl dt {
+  float: left;
+  clear: left;
+  width: 160px;
+  margin: 0;
+  text-align: right;
+}
+.tx_find dl dd {
+  margin: 0 0 1em 0;
+  padding-left: 170px;
+  min-height: 1em;
+}
+.tx_find dl dd ul {
+  padding: 0;
+}
+.tx_find dl dd ul li {
+  list-style-type: none;
+  padding: 0 0 0 2em;
+  text-indent: -2em;
+}
+.tx_find .field-transliteration, .tx_find .transliteration, .tx_find .field-weiteres {
+  font-family: TransliterationFont;
+}
+.tx_find .result h1 .technical {
+  position: relative;
+  float: right;
+  margin-left: 1em;
+  font-size: 75%;
+}
+.tx_find .result h1 .technical .bandseitezeile {
+  color: #333;
+}
+.tx_find .result h1 .technical .bandseitezeile.multiple:after {
+  position: absolute;
+  top: 0;
+  right: -1em;
+  content: "\2026";
+}
+.tx_find .result h1 .technical .field-texttyp {
+  color: #999;
+  font-style: italic;
+}
+.tx_find .result h1 .technical .field-texttyp:after {
+  padding-left: 0.3em;
+  content: "\2014";
+}
+.tx_find .result h1 .field-beziehung {
+  font-size: 80%;
+  color: #666;
+}
+.tx_find .result .hieroglyph {
+  height: 32px;
+  float: right;
+}
+.tx_find section {
+  margin-bottom: 2em;
+}
+.tx_find .detail {
+  margin-top: 2em;
+}
+.tx_find .detail .field-transliteration {
+  font-size: 133%;
+}
+.tx_find .detail.formular h1 ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.tx_find .detail.formular h1 ul li {
+  display: inline;
+  font-size: 133%;
+}
+.tx_find .detail.formular .field-texttyp {
+  font-style: italic;
+}
+.tx_find .detail.formular .field-transliteration {
+  display: block;
+  margin-top: 1em;
+}
+.tx_find .detail.formular .field-uebersetzung {
+  display: block;
+  margin-top: 1em;
+}
+.tx_find .detail.wort .hieroglyph {
+  float: right;
+}
+.tx_find ul.photo-collections {
+  padding: 0;
+}
+.tx_find ul.photo-collections li {
+  list-style-type: none;
+}
+.tx_find ul.photo-collections ul.photos {
+  padding: 0;
+}
+.tx_find ul.photo-collections ul.photos li {
+  display: inline;
+  padding: 0;
+}
+.tx_find .klammerung:before {
+  font-family: Transliteration;
+  content: '\00f6';
+}
+.tx_find .klammerung:after {
+  font-family: Transliteration;
+  content: '\00c4';
+}
+.tx_find .imageControls {
+  margin: 0 auto 1em auto;
+  text-align: center;
+}
+.tx_find .imageControls .control-container {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+.tx_find .imageControls .control-container .slider {
+  display: inline-block;
+  top: 3px;
+  width: 200px;
+}
+.tx_find .fotorama {
+  padding: 0;
+}
+.tx_find .fotorama .fotorama__caption {
+  opacity: 1;
+  right: 0;
+  left: 0;
+  text-align: center;
+  transition-duration: 0.3s;
+}
+.tx_find .fotorama .fotorama__nav .fotorama__caption {
+  padding: 0;
+  font-size: 12px;
+}
+.tx_find .fotorama .fotorama__html {
+  background: #eee;
+}
+.tx_find .fotorama .imageName {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2em;
+  text-align: center;
+}
+.tx_find article.fields {
+  padding-top: 1em;
+}
+.tx_find article.fields dl {
+  margin-top: 1em;
+}
+.tx_find article.fields dl dt {
+  width: 200px;
+}
+.tx_find article.fields dl dd {
+  padding-left: 210px;
+}
+.tx_find article.fields dl dd ul {
+  padding-left: 2em;
+}
+.tx_find article.fields dl dd ul li {
+  list-style-type: square;
+}
+
+.powerzoomer {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: #000 1px 1px 4px;
+}
+.powerzoomer .inner {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+
+.imageContainer {
+  display: inline-block;
+  position: relative;
+}
+.imageContainer .szene {
+  display: block;
+  position: absolute;
+  font-size: 17px;
+  color: #f00;
+}
+.imageContainer .szene.icon-pointer-0 {
+  margin-top: -0.1em;
+  margin-left: -0.75em;
+}
+.imageContainer .szene.icon-pointer-90 {
+  margin-left: -1em;
+}
+.imageContainer .szene.icon-pointer-180 {
+  margin-top: -0.8em;
+  margin-left: -0.75em;
+}
+.imageContainer .szene.icon-pointer-270 {
+  margin-left: -0.3em;
+}

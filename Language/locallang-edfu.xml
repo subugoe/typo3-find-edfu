@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>
+			Language labels for Edfu interface.
+		</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="Alle Datensätze vom Typ »%s« zeigen.">Show all records of text type »%s«.</label>
+			<label index="Photos">Photos</label>
+			<label index="Bildersammlung %s.">Photo collection »%s«.</label>
+			<label index="Photo »%s« aus dem Edfu-Projekt.">Photo »%s« of the Edfu-Project.</label>
+			<label index="Photo »%s« ist nicht online verfügbar.">Photo »%s« is not available online.</label>
+			<label index="Helligkeit">Brightness</label>
+			<label index="Kontrast">Contrast</label>
+			<label index="Literatur">References</label>
+			<label index="Stelle">Page</label>
+			<label index="Stellen">Pages</label>
+			<label index="Alle Datensätze zu dieser Stelle zeigen.">Show all records for this text location.</label>
+			<label index="Unsicher">imprecise</label>
+			<label index="Zerstörung">destroyed</label>
+			<label index="Hieroglyph">Hieroglyph</label>
+			<label index="Wb">Berlin Dictionary</label>
+			<label index="Wb öffnen">Search for this page on the Berlin Dictionary web site. (Opens in another window)</label>
+			<label index="Zweifel">Doubts</label>
+			<label index="Tempelplan">Temple map</label>
+		</languageKey>
+
+		<languageKey index="de" type="array">
+			<label index="Alle Datensätze vom Typ »%s« zeigen.">Alle Datensätze vom Typ »%s« zeigen.</label>
+			<label index="Photos">Photos</label>
+			<label index="Bildersammlung %s.">Bildersammlung »%s«.</label>
+			<label index="Photo »%s« aus dem Edfu-Projekt.">Photo »%s« aus dem Edfu-Projekt.</label>
+			<label index="Das Photo »%s« ist nicht online verfügbar.">Das Photo »%s« ist nicht online verfügbar.</label>
+			<label index="Helligkeit">Helligkeit</label>
+			<label index="Kontrast">Kontrast</label>
+			<label index="Literatur">Literatur</label>
+			<label index="Stelle">Stelle</label>
+			<label index="Stellen">Stellen</label>
+			<label index="Alle Datensätze zu dieser Stelle zeigen.">Alle Datensätze zu dieser Stelle zeigen.</label>
+			<label index="Unsicher">Unsicher</label>
+			<label index="Zerstörung">Zerstörung</label>
+			<label index="Hieroglyph">Hieroglyph</label>
+			<label index="Wb">Wörterbuch Berlin</label>
+			<label index="Wb öffnen">Diese Stelle im Wörterbuch Berlin suchen. (Anderes Fenster)</label>
+			<label index="Zweifel">Zweifel</label>
+			<label index="Tempelplan">Tempelplan</label>
+		</languageKey>
+	</data>
+</T3locallang>
