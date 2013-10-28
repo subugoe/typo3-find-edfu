@@ -89,6 +89,9 @@
 .tx_find ol.resultList li span.block {
   display: block;
 }
+.tx_find ol.resultList li a {
+  color: #000;
+}
 .tx_find ol.resultList li h1 {
   font-size: 133%;
 }
@@ -122,7 +125,6 @@
   color: #666;
 }
 .tx_find ol.resultList li p {
-  color: #000;
   font-weight: normal;
 }
 .tx_find ol.resultList li .hieroglyph {
