@@ -1,0 +1,3 @@
+[submodule "Resources/fotorama"]
+	path = Resources/fotorama
+	url = git://github.com/subugoe/fotorama.git
