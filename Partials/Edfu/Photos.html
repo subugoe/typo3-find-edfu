@@ -1,5 +1,16 @@
 {namespace s=Subugoe\Find\ViewHelpers}
 {namespace t3jquery=Tx_T3jquery_ViewHelpers}
+<f:comment>
+	Renders the photos for documents of type »formular«.
+
+	The fotorama script is used to create a – potentially scrolling – list of
+	thumbnails and provide the interactive selecting / paging / scrolling required.
+
+	The ddpowerzoomer script is used to provide an enlarged view for the area
+	beneath the cursor which allows furthe zooming using the scroll wheel.
+
+	The main edfu.js script takes care of hooking both these libraries up.
+</f:comment>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Projects/edfu/Resources/fotorama/product/fotorama.uncompressed.js"/>
 <t3jquery:addJQueryAndScript jsfile="EXT:find/Projects/edfu/Resources/ddpowerzoomer.js"/>
 <s:page.linkCSS file="EXT:find/Projects/edfu/Resources/fotorama/product/fotorama.css"/>

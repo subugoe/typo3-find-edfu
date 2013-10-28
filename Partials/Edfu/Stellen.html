@@ -1,4 +1,12 @@
 {namespace s=Subugoe\Find\ViewHelpers}
+<f:comment>
+	Renders the temple map, placing a marker at each location in the temple
+	relevant for the current document.
+	
+	In addition the edfu.js script hooks into these DOM elements to provide
+	on-hover detail views of the temple’s different walls and highlighting
+	the locations on there.
+</f:comment>
 <ul>
 	<s:data.transpose name="stellen" arrays="{
 			bandseitezeile: document.fields.bandseitezeile,
