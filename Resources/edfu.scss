@@ -175,6 +175,9 @@ $labelWidth: 120px;
 			.hieroglyph {
 				height: 32px;
 				float: right;
+				box-shadow: none;
+				-webkit-box-shadow: none;
+				-moz-box-shadow: none;
 			}
 
 			.field-anmerkung {

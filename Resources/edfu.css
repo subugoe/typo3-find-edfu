@@ -130,6 +130,9 @@
 .tx_find ol.resultList li .hieroglyph {
   height: 32px;
   float: right;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
 .tx_find ol.resultList li .field-anmerkung {
   font-style: italic;
