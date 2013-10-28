@@ -230,6 +230,11 @@
   left: 0;
   text-align: center;
   transition-duration: 0.3s;
+  background: white;
+  background: rgba(255, 255, 255, 0.8);
+}
+.tx_find .fotorama-container .fotorama .fotorama__caption .fotorama__caption__wrap {
+  background: transparent;
 }
 .tx_find .fotorama-container .fotorama .fotorama__nav .fotorama__caption {
   padding: 0;

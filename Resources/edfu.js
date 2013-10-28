@@ -8,6 +8,7 @@ var edfu = (function () {
 	var szeneLinkURLTemplate;
 	var szenenInfo = {};
 
+
 	var onSlide = function (event, ui) {
 		var filterStrings = [];
 		jQuery('.ui-slider').each( function () {
@@ -296,10 +297,14 @@ var edfu = (function () {
 						var imageData = fotorama.data[imageIndex];
 						if (imageData['$navThumbFrame']) {
 							var thumb = imageData['$navThumbFrame'][0];
-							var caption = document.createElement('div');
-							caption.setAttribute('class', 'fotorama__caption');
-							caption.appendChild(document.createTextNode(imageData.caption));
-							thumb.appendChild(caption);
+							if (jQuery('.fotorama__caption', thumb).length === 0) {
+								var caption = document.createElement('div');
+								caption.setAttribute('class', 'fotorama__caption');
+								caption.appendChild(document.createTextNode(imageData.caption));
+
+								jQuery('.fotorama__thumb', thumb).append(caption);
+
+							}
 						}
 					}
 				});
@@ -339,9 +344,6 @@ var edfu = (function () {
  * Build: http://modernizr.com/download/#-shiv-prefixes-css_filters
  */
 ;
-
-
-
 window.Modernizr = (function( window, document, undefined ) {
 
     var version = '2.6.2',
