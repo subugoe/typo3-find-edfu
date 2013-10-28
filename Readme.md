@@ -91,3 +91,10 @@ A number of resources are included with this setup. They need to be accessed for
 * fotorama: Artem Polikarpov’s [fotorama](https://github.com/artpolikarpov/fotorama/) library for the image pager
 	* note that this needs to be built with grunt if checked out from github
 * ddpowerzoomer.js: [Dynamic Drive’s JavaScript for zooming into the photos](http://www.dynamicdrive.com/dynamicindex4/powerzoomer.htm)
+
+
+## Photos
+The large number of photos and scans belonging to the project are expected to be available at fileadmin/edfu-data/ on the system
+
+* Photos: a folder containing the photos of the project with the next subfolder indicating the image set name containing the photos themselves, e.g. fileadmin/edfu-data/Photos/SW/534.jpg
+* Chassinat: a folder containing scans of the Chassinat volumes; it contains files named »X_YYY.jpg« where X is the volume number [12345678] and YYY is the zero-padded page number
