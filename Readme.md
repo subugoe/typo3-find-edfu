@@ -93,8 +93,9 @@ A number of resources are included with this setup. They need to be accessed for
 * ddpowerzoomer.js: [Dynamic Drive’s JavaScript for zooming into the photos](http://www.dynamicdrive.com/dynamicindex4/powerzoomer.htm)
 
 
-## Photos
-The large number of photos and scans belonging to the project are expected to be available at fileadmin/edfu-data/ on the system
+## Images
+The large number of images belonging to the project are expected to be available at fileadmin/edfu-data/ on the TYPO3 server:
 
-* Photos: a folder containing the photos of the project with the next subfolder indicating the image set name containing the photos themselves, e.g. fileadmin/edfu-data/Photos/SW/534.jpg
-* Chassinat: a folder containing scans of the Chassinat volumes; it contains files named »X_YYY.jpg« where X is the volume number [12345678] and YYY is the zero-padded page number
+* Photos: a folder containing subfolders with the photos of the project; the path to a photo is »fileadmin/edfu-data/Photos/XX/YY.ZZ« where XX is the name of the photo set (currently one of »SW«, »2003«, »2005«, »2011«), YY is the image name as stored in the index (e.g. »11« or »D05_0001«) and ZZ is the file name extension (»jpg« for the »SW« set, »JPG« otherwise).
+* Chassinat: a folder containing scans of the Chassinat volumes; it contains files named »X_YYY.jpg« where X is the volume number [12345678] and YYY is the left zero-padded page number
+* WL: a folder containing SVG graphics of hieroglyphs; it contains files named »WLX.svg« where X is the value of the »hieroglyph« field in a document of type »wort«
