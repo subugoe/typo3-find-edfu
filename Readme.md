@@ -30,6 +30,9 @@ To set up the Edfu index, you need
 
 5. for **nice URLs**: TYPO3 should be configured to use RealURL with configuration the find extension autoconfigures. The URL for the record formular-1 should be `http://adw-goe.de/edfu/datenbank/id/formular-1`.
 
+6. **known issue**: the AdW site’s RealURL configuration (as of 2013-11-01) will remove the `type`parameter for the custom JSON page type configured by the find extension. This breaks AJAX call the setup makes to load scene data for the temple display.
+
+
 
 ### TypoScript configuration
 The main configuration is done in the [edfu.ts](edfu.ts) file that is included in the template.
